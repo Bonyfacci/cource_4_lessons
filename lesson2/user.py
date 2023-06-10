@@ -19,7 +19,7 @@ class User:
     def __init__(self, name, password):
         self.__name = name
         self.__password = password
-        self.is_admin = self.is_admin()
+        # self.is_admin = False
         self._is_admin = False
         self.is_active = True
 
@@ -35,11 +35,9 @@ class User:
     def password(self, value):
         self.__password = value
 
+    @property
     def is_admin(self):
-        if self._is_admin:
-            return True
-        else:
-            return self.__name == self.admin
+        return self._is_admin
 
     def login(self, data):
         return self.__password == data
