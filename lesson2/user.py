@@ -19,7 +19,6 @@ class User:
     def __init__(self, name, password):
         self.__name = name
         self.__password = password
-        # self.is_admin = False
         self._is_admin = False
         self.is_active = True
 
@@ -40,7 +39,7 @@ class User:
         return self._is_admin
 
     def login(self, data):
-        return self.__password == data
+        print(self.__password == data)
 
     def logout(self):
         self.is_active = False
